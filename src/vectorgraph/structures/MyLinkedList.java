@@ -29,6 +29,31 @@ public class MyLinkedList {
         }
         return false;
     }
+        public void insertSorted(int value) {
+        ListNode newNode = new ListNode(value);
+
+        if (head == null || value < head.data) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        ListNode temp = head;
+        while (temp.next != null && temp.next.data < value) {
+            temp = temp.next;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
+
+    public int count() {
+        int total = 0;
+        ListNode temp = head;
+        while (temp != null) {
+            total++;
+            temp = temp.next;
+        }
+        return total;
+    }
 
     public String toString() {
         String result = "";
