@@ -1,13 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package vectorgraph.structures;
 
-/**
- *
- * @author Mahru
- */
 public class SkipNode {
-    
+    public int data;
+    public SkipNode[] next;
+
+    public SkipNode(int data, int levels) {
+        this.data = data;
+        this.next = new SkipNode[levels];
+    }
 }
